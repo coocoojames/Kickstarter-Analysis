@@ -1,10 +1,10 @@
 # An Analysis of Kickstarter Campaigns
 Analyzing Kickstarter data for trends.
 
-### Purpose of analysis:
+# Purpose of analysis:
 To analyze the success rate of theater and play projects based on launch dates and the pledge goals by finding possible correlations between them.
 
-### How I performed my analysis:
+# How I performed my analysis:
 1.	Extracted years from the Launch Date Conversion column using the Year() function.
 2.	Created a pivot table with the range of all the data on the main data table.
 3.	Populated pivot table with following fields:
@@ -12,17 +12,26 @@ Filter: Parent Category, Year
 Columns: Outcomes
 Row: Launch Date Conversion
 Values: Count of outcomes
-4.	Filter Parent Category to just: theater  **Refer to screenshot 1
-5.	Inserted line chart from the pivot table **Refer to Resources folder
-6.	Populated the self-made table of pledge goal range and the number of successful, failed, and canceled campaigns and the percentage of them based on total number of campaigns using the COUNTIFS() function. **Refer to screenshot 2 & 3
+4.	Filter Parent Category to just: theater
+https://github.com/coocoojames/Kickstarter-Analysis/blob/main/Resources/Screenshot%201.png
+
+5.	Inserted line chart from the pivot table
+https://github.com/coocoojames/Kickstarter-Analysis/blob/main/Resources/Theater_Outcomes_vs_Launch.png
+
+6.	Populated the self-made table of pledge goal range and the number of successful, failed, and canceled campaigns and the percentage of them based on total number of campaigns using the COUNTIFS() function.  https://github.com/coocoojames/Kickstarter-Analysis/blob/main/Resources/Screenshot%202.png
+https://github.com/coocoojames/Kickstarter-Analysis/blob/main/Resources/Screenshot%203.png
+
 Here, I ran into a few troubles here. I thought I could filter out the main Kickstarter workbook data with the subcategory: plays so that I didn’t have to include that in one of the criteria in my COUNTIFS() function. When I did that, first thing that happened was I got results other than 0 for my “number of canceled” column. I tried and tried, and I finally fixed my criteria in the function to be “<canceled”, instead of “canceled”. It returned the correct number of canceled campaigns. What I didn’t realize was all the other numbers were wrong for successful and failed campaigns. When I finally moved on to the line chart, I realized it was totally wrong and I had to include the criteria: plays, in my function for it to work. I learned that every time I’m dealing with large numbers, I’d better go back to the main data and double check there first.
 I still don’t understand how that works because if it was retrieving data from everything on the main data, the total number of campaigns was much larger after the calculation.
-7.	Made a pivot table for myself to look at just the percentage of success, fail, and cancel rates. **Refer to screenshot 4
-8.	Inserted a line chart from the pivot table I made. Then added a title for the chart. **Refer to Resources folder
+7.	Made a pivot table for myself to look at just the percentage of success, fail, and cancel rates.
+https://github.com/coocoojames/Kickstarter-Analysis/blob/main/Resources/Screenshot%204.png
 
-# Another possible problem encounter would be not having the correct data set to put in the first pivot table to get the right results from the main data.
+8.	Inserted a line chart from the pivot table I made. Then added a title for the chart.
+https://github.com/coocoojames/Kickstarter-Analysis/blob/main/Resources/Outcomes_VS_Goals.png
 
-### Results:
+### Another possible problem encounter would be not having the correct data set to put in the first pivot table to get the right results from the main data.
+
+#Results:
 ## Theater Outcomes by Launch Date
 From the data based on launch dates, in May and June there are most successful campaigns. Interestingly there are also the most failed campaigns in May and second most in June. There are equal amounts of canceled campaigns but the most are in January. Based on this we can say that a theater campaign is most likely to succeed in the month of May and the most likely to be canceled in the month of January. We can also conclude that you are more likely to fail from April to August than you are in the other months.
 
