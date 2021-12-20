@@ -31,7 +31,7 @@ https://github.com/coocoojames/Kickstarter-Analysis/blob/main/Resources/Outcomes
 
 ### Another possible problem encounter would be not having the correct data set to put in the first pivot table to get the right results from the main data.
 
-#Results:
+# Results:
 ## Theater Outcomes by Launch Date
 From the data based on launch dates, in May and June there are most successful campaigns. Interestingly there are also the most failed campaigns in May and second most in June. There are equal amounts of canceled campaigns but the most are in January. Based on this we can say that a theater campaign is most likely to succeed in the month of May and the most likely to be canceled in the month of January. We can also conclude that you are more likely to fail from April to August than you are in the other months.
 
